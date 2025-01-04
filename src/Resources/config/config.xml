@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
+    <card>
+        <title>settings for the circle without icon</title>
+        <title lang="de-DE">Einstellungen für den Kreis ohne Icon</title>
+
+        <input-field type="int">
+            <name>widthDeliveryStatusIndicator</name>
+            <label>width in pixels</label>
+            <label lang="de-DE">Breite in Pixeln</label>
+            <defaultValue>18</defaultValue>
+            <placeholder>18</placeholder>
+        </input-field>
+
+        <input-field type="int">
+            <name>heightDeliveryStatusIndicator</name>
+            <label>height in pixels</label>
+            <label lang="de-DE">Höhe in Pixeln</label>
+            <defaultValue>18</defaultValue>
+            <placeholder>18</placeholder>
+        </input-field>
+
+        <input-field type="int">
+            <name>topDeliveryStatusIndicator</name>
+            <label>distance to the top in pixels</label>
+            <label lang="de-DE">Abstand nach oben in Pixeln</label>
+            <defaultValue>4</defaultValue>
+            <placeholder>4</placeholder>
+        </input-field>
+    </card>
+
+    <card>
+        <title>settings for the circle with icon</title>
+        <title lang="de-DE">Einstellungen für den Kreis mit Icon</title>
+
+        <input-field type="int">
+            <name>heightCircleDeliveryStatusIndicatorIcon</name>
+            <label>height in pixels</label>
+            <label lang="de-DE">Höhe in Pixeln</label>
+            <defaultValue>28</defaultValue>
+            <placeholder>28</placeholder>
+        </input-field>
+
+        <input-field type="int">
+            <name>topCircleDeliveryStatusIndicatorIcon</name>
+            <label>distance to the top in pixels</label>
+            <label lang="de-DE">Abstand nach oben in Pixeln</label>
+            <defaultValue>3</defaultValue>
+            <placeholder>3</placeholder>
+        </input-field>
+    </card>
+
+    <card>
+        <title>settings for the icons</title>
+        <title lang="de-DE">Einstellungen für die Icons</title>
+
+        <input-field type="bool">
+            <name>showIcons</name>
+            <label>show</label>
+            <label lang="de-DE">anzeigen</label>
+            <defaultValue>true</defaultValue>
+        </input-field>
+
+        <input-field type="colorpicker">
+            <name>colorDeliveryStatusIndicatorIcon</name>
+            <label>color</label>
+            <label lang="de-DE">Farbe</label>
+            <css>sschreier-color-delivery-status-indicator-icon</css>
+            <defaultValue>#FFFFFF</defaultValue>
+            <placeholder>#FFFFFF</placeholder>
+        </input-field>
+
+        <input-field type="int">
+            <name>widthDeliveryStatusIndicatorIcon</name>
+            <label>width in pixels</label>
+            <label lang="de-DE">Breite in Pixeln</label>
+            <defaultValue>16</defaultValue>
+            <placeholder>16</placeholder>
+        </input-field>
+
+        <input-field type="int">
+            <name>heightDeliveryStatusIndicatorIcon</name>
+            <label>height in pixels</label>
+            <label lang="de-DE">Höhe in Pixeln</label>
+            <defaultValue>16</defaultValue>
+            <placeholder>16</placeholder>
+        </input-field>
+
+        <input-field type="int">
+            <name>topDeliveryStatusIndicatorIcon</name>
+            <label>distance to the top in pixels</label>
+            <label lang="de-DE">Abstand nach oben in Pixeln</label>
+            <defaultValue>0</defaultValue>
+            <placeholder>0</placeholder>
+        </input-field>
+    </card>
+
+    <card>
+        <title>settings for the exclamation icon</title>
+        <title lang="de-DE">Einstellungen für das Ausrufezeichen</title>
+
+        <input-field type="int">
+            <name>widthDeliveryStatusIndicatorExclamationIcon</name>
+            <label>width in pixels</label>
+            <label lang="de-DE">Breite in Pixeln</label>
+            <defaultValue>20</defaultValue>
+            <placeholder>20</placeholder>
+        </input-field>
+
+        <input-field type="int">
+            <name>heightDeliveryStatusIndicatorExclamationIcon</name>
+            <label>height in pixels</label>
+            <label lang="de-DE">Höhe in Pixeln</label>
+            <defaultValue>20</defaultValue>
+            <placeholder>20</placeholder>
+        </input-field>
+
+        <input-field type="int">
+            <name>topDeliveryStatusIndicatorExclamationIcon</name>
+            <label>distance to the top in pixels</label>
+            <label lang="de-DE">Abstand nach oben in Pixeln</label>
+            <defaultValue>2</defaultValue>
+            <placeholder>2</placeholder>
+        </input-field>
+
+        <input-field type="int">
+            <name>marginTopDeliveryStatusIndicatorExclamationIcon</name>
+            <label>outside distance to the top in pixels</label>
+            <label lang="de-DE">Außenabstand nach oben in Pixeln</label>
+            <defaultValue>-4</defaultValue>
+            <placeholder>-4</placeholder>
+        </input-field>
+    </card>
+
+    <card>
+        <title>settings for the text</title>
+        <title lang="de-DE">Einstellungen für den Text</title>
+
+        <input-field type="bool">
+            <name>colorizeText</name>
+            <label>colorize text</label>
+            <label lang="de-DE">Text einfärben</label>
+            <defaultValue>true</defaultValue>
+        </input-field>
+    </card>
+
+    <card>
+        <title>settings for the status, if the product is not active</title>
+        <title lang="de-DE">Einstellungen für den Status, wenn das Produkt nicht aktiv ist</title>
+
+        <input-field type="colorpicker">
+            <name>colorDeliveryNotAvailable</name>
+            <label>color</label>
+            <label lang="de-DE">Farbe</label>
+            <css>sschreier-color-delivery-not-available</css>
+            <defaultValue>#c20017</defaultValue>
+            <placeholder>#c20017</placeholder>
+        </input-field>
+
+        <component name="sw-snippet-field">
+            <name>textDeliveryNotAvailableSnippet</name>
+            <label>text</label>
+            <label lang="de-DE">Text</label>
+            <snippet>general.deliveryNotAvailable</snippet>
+            <helpText>click on the globe to edit the translations</helpText>
+            <helpText lang="de-DE">Klicke auf den Globus, um die Übersetzung zu bearbeiten</helpText>
+        </component>
+    </card>
+
+    <card>
+        <title>settings for the status, if the product has a release date</title>
+        <title lang="de-DE">Einstellungen für den Status, wenn das Produkt ein Erscheinungsdatum hat</title>
+
+        <input-field type="bool">
+            <name>showTwoCirclesDeliveryPreorder</name>
+            <label>show two circles</label>
+            <label lang="de-DE">2 Kreise anzeigen</label>
+            <defaultValue>false</defaultValue>
+        </input-field>
+
+        <input-field type="colorpicker">
+            <name>colorDeliveryPreorder</name>
+            <label>color</label>
+            <label lang="de-DE">Farbe</label>
+            <css>sschreier-color-delivery-preorder</css>
+            <defaultValue>#974200</defaultValue>
+            <placeholder>#974200</placeholder>
+        </input-field>
+
+        <component name="sw-snippet-field">
+            <name>textReleaseDateOfProductSnippet</name>
+            <label>text</label>
+            <label lang="de-DE">Text</label>
+            <snippet>general.deliveryShipping</snippet>
+            <helpText>click on the globe to edit the translations</helpText>
+            <helpText lang="de-DE">Klicke auf den Globus, um die Übersetzung zu bearbeiten</helpText>
+        </component>
+    </card>
+
+    <card>
+        <title>settings for the status, if the product is available and has a delivery time</title>
+        <title lang="de-DE">Einstellungen für den Status, wenn das Produkt verfügbar ist und eine Lieferzeit hat</title>
+
+        <input-field type="bool">
+            <name>showThreeCirclesDeliveryAvailable</name>
+            <label>show three circles</label>
+            <label lang="de-DE">3 Kreise anzeigen</label>
+            <defaultValue>false</defaultValue>
+        </input-field>
+
+        <input-field type="colorpicker">
+            <name>colorDeliveryAvailable</name>
+            <label>color</label>
+            <label lang="de-DE">Farbe</label>
+            <css>sschreier-color-delivery-available</css>
+            <defaultValue>#007e4e</defaultValue>
+            <placeholder>#007e4e</placeholder>
+        </input-field>
+
+        <component name="sw-snippet-field">
+            <name>textDeliveryAvailableSnippet</name>
+            <label>text</label>
+            <label lang="de-DE">Text</label>
+            <snippet>detail.deliveryTimeAvailable</snippet>
+            <helpText>click on the globe to edit the translations</helpText>
+            <helpText lang="de-DE">Klicke auf den Globus, um die Übersetzung zu bearbeiten</helpText>
+        </component>
+    </card>
+
+    <card>
+        <title>settings for the status, if the product is sold out</title>
+        <title lang="de-DE">Einstellungen für den Status, wenn das Produkt nicht mehr verfügbar ist</title>
+
+        <input-field type="colorpicker">
+            <name>colorDeliverySoldout</name>
+            <label>color</label>
+            <label lang="de-DE">Farbe</label>
+            <css>sschreier-color-delivery-soldout</css>
+            <defaultValue>#c20017</defaultValue>
+            <placeholder>#c20017</placeholder>
+        </input-field>
+
+        <component name="sw-snippet-field">
+            <name>textDeliverySoldoutSnippet</name>
+            <label>text</label>
+            <label lang="de-DE">Text</label>
+            <snippet>detail.soldOut</snippet>
+            <helpText>click on the globe to edit the translations</helpText>
+            <helpText lang="de-DE">Klicke auf den Globus, um die Übersetzung zu bearbeiten</helpText>
+        </component>
+    </card>
+
+    <card>
+        <title>settings for the status when a product will be back in stock</title>
+        <title lang="de-DE">Einstellungen für den Status, ab wann ein Produkt wieder auf Lager ist</title>
+
+        <input-field type="bool">
+            <name>showTwoCirclesDeliveryRestock</name>
+            <label>show two circles</label>
+            <label lang="de-DE">2 Kreise anzeigen</label>
+            <defaultValue>false</defaultValue>
+        </input-field>
+
+        <input-field type="colorpicker">
+            <name>colorDeliveryRestock</name>
+            <label>color</label>
+            <label lang="de-DE">Farbe</label>
+            <css>sschreier-color-delivery-restock</css>
+            <defaultValue>#974200</defaultValue>
+            <placeholder>#974200</placeholder>
+        </input-field>
+
+        <component name="sw-snippet-field">
+            <name>textDeliveryRestockSnippet</name>
+            <label>text</label>
+            <label lang="de-DE">Text</label>
+            <snippet>detail.deliveryTimeRestock</snippet>
+            <helpText>click on the globe to edit the translations</helpText>
+            <helpText lang="de-DE">Klicke auf den Globus, um die Übersetzung zu bearbeiten</helpText>
+        </component>
+    </card>
+</config>

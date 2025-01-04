@@ -1,0 +1,43 @@
+{
+  "name": "sschreier/sschreierimprovementdisplaystockdeliveryinformation",
+  "description": "improves the display of the stock and delivery information",
+  "version": "1.0.0",
+  "type": "shopware-platform-plugin",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Sebastian Schreier",
+      "role": "Manufacturer"
+    }
+  ],
+  "require": {
+    "shopware/core": "~6.6.0",
+    "shopware/storefront": "~6.6.0"
+  },
+  "extra": {
+    "shopware-plugin-class": "Sschreier\\ImprovementDisplayStockDeliveryInformation\\SschreierImprovementDisplayStockDeliveryInformation",
+    "plugin-icon": "src/Resources/config/plugin.png",
+    "copyright": "Sebastian Schreier",
+    "label": {
+      "de-DE": "Verbesserung der Lagerbestands- und Lieferbarkeitsanzeige",
+      "en-GB": "Improvement of the display of the stock and delivery information"
+    },
+    "description": {
+      "de-DE": "Die Erweiterung verbessert die Lagerbestands- und Lieferbarkeitsanzeige auf der Produkt - Detailseite. Im Sinne der Barrierefreiheit ist es nun möglich, die Lieferbarkeitsanzeige nicht nur farblich darzustellen, sondern auch über Icons (Häkchen, Ausrufezeichen und X). Für die Icons kann die Farbe, die Breite, die Höhe und der Abstand nach oben in Pixeln festgelegt werden. Für das Ausrufezeichen kann man abweichende Einstellungen vornehmen. Bei dem Kreis kann die Breite, die Höhe als auch der Abstand nach oben in Pixeln festgelegt werden. Bei Bedarf kann man auch den Text mit einfärben lassen. Darüber hinaus kann innerhalb der Konfiguration der Erweiterung für die einzelnen Status die jeweilige Farbe und der Text angepasst werden. Insofern das Produkt verfügbar ist und eine Lieferzeit hat, kann man sich statt einem auch drei Kreise anzeigen lassen. Wenn das Produkt ein Erscheinungsdatum oder den Status hat, ab wann es wieder auf Lager ist, können in diesem Fall statt einem auch zwei Kreise angezeigt werden.",
+      "en-GB": "The extension improves the display of the stock and delivery information on the product detail page. In the interest of accessibility, it is now possible to display the availability indicator not only in color, but also via icons (checkmark, exclamation and X). For the icons, the color, the width, the height and the distance to the top can be specified in pixels. For the exclamation mark can be made different settings. For the circle, the width, height and distance to the top can be specified in pixels. If necessary, the text can also be colorized. In addition, you can customize the color and the text for each status within the configuration of the extension. If the product is available and has a delivery time, three circles can be displayed instead of one. If the product has a release date or the status when it will be back in stock, you can display two circles instead of one."
+    },
+    "manufacturerLink": {
+      "de-DE": "https://www.sebastianschreier.de",
+      "en-GB": "https://www.sebastianschreier.de"
+    },
+    "supportLink": {
+      "de-DE": "https://www.sebastianschreier.de",
+      "en-GB": "https://www.sebastianschreier.de"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Sschreier\\ImprovementDisplayStockDeliveryInformation\\": "src/"
+    }
+  }
+}

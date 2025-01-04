@@ -1,0 +1,231 @@
+{% sw_extends '@Storefront/storefront/component/delivery-information.html.twig' %}
+
+{% set showIcons = config('SschreierImprovementDisplayStockDeliveryInformation.config.showIcons') %}
+{% set colorizeText = config('SschreierImprovementDisplayStockDeliveryInformation.config.colorizeText') %}
+{% set showTwoCirclesDeliveryPreorder = config('SschreierImprovementDisplayStockDeliveryInformation.config.showTwoCirclesDeliveryPreorder') %}
+{% set showThreeCirclesDeliveryAvailable = config('SschreierImprovementDisplayStockDeliveryInformation.config.showThreeCirclesDeliveryAvailable') %}
+{% set showTwoCirclesDeliveryRestock = config('SschreierImprovementDisplayStockDeliveryInformation.config.showTwoCirclesDeliveryRestock') %}
+
+{% block component_delivery_information_not_available %}
+    {% block component_delivery_information_not_available_improvementdisplaystockdeliveryinformation %}
+        {% block component_delivery_information_not_available_improvementdisplaystockdeliveryinformation_link %}
+            <link itemprop="availability" href="https://schema.org/LimitedAvailability">
+        {% endblock %}
+
+        {% block component_delivery_information_not_available_improvementdisplaystockdeliveryinformation_inner %}
+            <p class="delivery-information delivery-not-available{% if colorizeText %} delivery-colored{% endif %}">
+                <span class="delivery-status-container{% if showIcons %} delivery-status-icons{% endif %}">
+                    {% if showIcons %}
+                        {% block component_delivery_information_not_available_improvementdisplaystockdeliveryinformation_inner_icon %}
+                            <span class="delivery-status-indicator-icon icon-x">
+                                {% sw_icon 'x' style { 'size': 'fluid' } %}
+                            </span>
+                        {% endblock %}
+                    {% else %}
+                        {% block component_delivery_information_not_available_improvementdisplaystockdeliveryinformation_inner_circle %}
+                            <span class="delivery-status-indicator bg-danger"></span>
+                        {% endblock %}
+                    {% endif %}
+                </span>
+
+                {% block component_delivery_information_not_available_improvementdisplaystockdeliveryinformation_inner_text %}
+                    <span class="delivery-status-text">
+                        {{ 'general.deliveryNotAvailable'|trans|sw_sanitize }}
+                    </span>
+                {% endblock %}
+            </p>
+        {% endblock %}
+    {% endblock %}
+{% endblock %}
+
+{% block component_delivery_information_pre_order %}
+    {% block component_delivery_information_pre_order_improvementdisplaystockdeliveryinformation %}
+        {% block component_delivery_information_pre_order_improvementdisplaystockdeliveryinformation_link %}
+            <link itemprop="availability" href="https://schema.org/PreOrder">
+        {% endblock %}
+
+        {% block component_delivery_information_pre_order_improvementdisplaystockdeliveryinformation_inner %}
+            <p class="delivery-information delivery-preorder{% if colorizeText %} delivery-colored{% endif %}">
+                <span class="delivery-status-container{% if showIcons %} delivery-status-icons{% endif %}">
+                    {% if showIcons %}
+                        {% if showTwoCirclesDeliveryPreorder %}
+                            {% block component_delivery_information_pre_order_improvementdisplaystockdeliveryinformation_inner_icons %}
+                                <span class="delivery-status-indicator-icon icon-exclamation">
+                                    {% sw_icon 'exclamationmark' style { pack: 'solid', 'size': 'fluid' } %}
+                                </span>
+                                <span class="delivery-status-indicator-icon icon-exclamation">
+                                    {% sw_icon 'exclamationmark' style { pack: 'solid', 'size': 'fluid' } %}
+                                </span>
+                            {% endblock %}
+                        {% else %}
+                            {% block component_delivery_information_pre_order_improvementdisplaystockdeliveryinformation_inner_icon %}
+                                <span class="delivery-status-indicator-icon icon-exclamation">
+                                    {% sw_icon 'exclamationmark' style { pack: 'solid', 'size': 'fluid' } %}
+                                </span>
+                            {% endblock %}
+                        {% endif %}
+                    {% else %}
+                        {% if showTwoCirclesDeliveryPreorder %}
+                            {% block component_delivery_information_pre_order_improvementdisplaystockdeliveryinformation_inner_circles %}
+                                <span class="delivery-status-indicator bg-warning"></span>
+                                <span class="delivery-status-indicator bg-warning"></span>
+                            {% endblock %}
+                        {% else %}
+                            {% block component_delivery_information_pre_order_improvementdisplaystockdeliveryinformation_inner_circle %}
+                                <span class="delivery-status-indicator bg-warning"></span>
+                            {% endblock %}
+                        {% endif %}
+                    {% endif %}
+                </span>
+
+                {% block component_delivery_information_pre_order_improvementdisplaystockdeliveryinformation_inner_text %}
+                    <span class="delivery-status-text">
+                        {{ 'general.deliveryShipping'|trans|sw_sanitize }} {{ product.releaseDate|format_date('long', locale=app.request.locale) }}
+                    </span>
+                {% endblock %}
+            </p>
+        {% endblock %}
+    {% endblock %}
+{% endblock %}
+
+{% block component_delivery_information_available %}
+    {% block component_delivery_information_available_improvementdisplaystockdeliveryinformation %}
+        {% block component_delivery_information_available_improvementdisplaystockdeliveryinformation_link %}
+            <link itemprop="availability" href="https://schema.org/InStock">
+        {% endblock %}
+
+        {% block component_delivery_information_available_improvementdisplaystockdeliveryinformation_inner %}
+            <p class="delivery-information delivery-available{% if colorizeText %} delivery-colored{% endif %}">
+                <span class="delivery-status-container{% if showIcons %} delivery-status-icons{% endif %}">
+                    {% if showIcons %}
+                        {% if showThreeCirclesDeliveryAvailable %}
+                            {% block component_delivery_information_available_improvementdisplaystockdeliveryinformation_inner_icons %}
+                                <span class="delivery-status-indicator-icon icon-checkmark">
+                                    {% sw_icon 'checkmark' style { 'size': 'fluid' } %}
+                                </span>
+                                <span class="delivery-status-indicator-icon icon-checkmark">
+                                    {% sw_icon 'checkmark' style { 'size': 'fluid' } %}
+                                </span>
+                                <span class="delivery-status-indicator-icon icon-checkmark">
+                                    {% sw_icon 'checkmark' style { 'size': 'fluid' } %}
+                                </span>
+                            {% endblock %}
+                        {% else %}
+                            {% block component_delivery_information_available_improvementdisplaystockdeliveryinformation_inner_icon %}
+                                <span class="delivery-status-indicator-icon icon-checkmark">
+                                    {% sw_icon 'checkmark' style { 'size': 'fluid' } %}
+                                </span>
+                            {% endblock %}
+                        {% endif %}
+                    {% else %}
+                        {% if showThreeCirclesDeliveryAvailable %}
+                            {% block component_delivery_information_available_improvementdisplaystockdeliveryinformation_inner_circles %}
+                                <span class="delivery-status-indicator bg-success"></span>
+                                <span class="delivery-status-indicator bg-success"></span>
+                                <span class="delivery-status-indicator bg-success"></span>
+                            {% endblock %}
+                        {% else %}
+                            {% block component_delivery_information_available_improvementdisplaystockdeliveryinformation_inner_circle %}
+                                <span class="delivery-status-indicator bg-success"></span>
+                            {% endblock %}
+                        {% endif %}
+                    {% endif %}
+                </span>
+
+                {% block component_delivery_information_available_improvementdisplaystockdeliveryinformation_inner_text %}
+                    <span class="delivery-status-text">
+                        {{ 'detail.deliveryTimeAvailable'|trans({
+                            '%name%': product.deliveryTime.translation('name')
+                        })|sw_sanitize }}
+                    </span>
+                {% endblock %}
+            </p>
+        {% endblock %}
+    {% endblock %}
+{% endblock %}
+
+{% block component_delivery_information_soldout %}
+    {% block component_delivery_information_soldout_improvementdisplaystockdeliveryinformation %}
+        {% block component_delivery_information_soldout_improvementdisplaystockdeliveryinformation_link %}
+            <link itemprop="availability" href="https://schema.org/OutOfStock">
+        {% endblock %}
+
+        {% block component_delivery_information_soldout_improvementdisplaystockdeliveryinformation_inner %}
+            <p class="delivery-information delivery-soldout{% if colorizeText %} delivery-colored{% endif %}">
+                <span class="delivery-status-container{% if showIcons %} delivery-status-icons{% endif %}">
+                    {% if showIcons %}
+                        {% block component_delivery_information_soldout_improvementdisplaystockdeliveryinformation_inner_icon %}
+                            <span class="delivery-status-indicator-icon icon-x">
+                                {% sw_icon 'x' style { 'size': 'fluid' } %}
+                            </span>
+                        {% endblock %}
+                    {% else %}
+                        {% block component_delivery_information_soldout_improvementdisplaystockdeliveryinformation_inner_circle %}
+                            <span class="delivery-status-indicator bg-danger"></span>
+                        {% endblock %}
+                    {% endif %}
+                </span>
+
+                {% block component_delivery_information_soldout_improvementdisplaystockdeliveryinformation_inner_text %}
+                    <span class="delivery-status-text">
+                        {{ 'detail.soldOut'|trans|sw_sanitize }}
+                    </span>
+                {% endblock %}
+            </p>
+        {% endblock %}
+    {% endblock %}
+{% endblock %}
+
+{% block component_delivery_information_restock %}
+    {% block component_delivery_information_restock_improvementdisplaystockdeliveryinformation %}
+        {% block component_delivery_information_restock_improvementdisplaystockdeliveryinformation_link %}
+            <link itemprop="availability" href="https://schema.org/LimitedAvailability">
+        {% endblock %}
+
+        {% block component_delivery_information_restock_improvementdisplaystockdeliveryinformation_inner %}
+            <p class="delivery-information delivery-restock{% if colorizeText %} delivery-colored{% endif %}">
+                <span class="delivery-status-container{% if showIcons %} delivery-status-icons{% endif %}">
+                    {% if showIcons %}
+                        {% if showTwoCirclesDeliveryRestock %}
+                            {% block component_delivery_information_restock_improvementdisplaystockdeliveryinformation_inner_icons %}
+                                <span class="delivery-status-indicator-icon icon-exclamation">
+                                    {% sw_icon 'exclamationmark' style { pack: 'solid', 'size': 'fluid' } %}
+                                </span>
+                                <span class="delivery-status-indicator-icon icon-exclamation">
+                                    {% sw_icon 'exclamationmark' style { pack: 'solid', 'size': 'fluid' } %}
+                                </span>
+                            {% endblock %}
+                        {% else %}
+                            {% block component_delivery_information_restock_improvementdisplaystockdeliveryinformation_inner_icon %}
+                                <span class="delivery-status-indicator-icon icon-exclamation">
+                                    {% sw_icon 'exclamationmark' style { pack: 'solid', 'size': 'fluid' } %}
+                                </span>
+                            {% endblock %}
+                        {% endif %}
+                    {% else %}
+                        {% if showTwoCirclesDeliveryRestock %}
+                            {% block component_delivery_information_restock_improvementdisplaystockdeliveryinformation_inner_circles %}
+                                <span class="delivery-status-indicator bg-warning"></span>
+                                <span class="delivery-status-indicator bg-warning"></span>
+                            {% endblock %}
+                        {% else %}
+                            {% block component_delivery_information_restock_improvementdisplaystockdeliveryinformation_inner_circle %}
+                                <span class="delivery-status-indicator bg-warning"></span>
+                            {% endblock %}
+                        {% endif %}
+                    {% endif %}
+                </span>
+
+                {% block component_delivery_information_restock_improvementdisplaystockdeliveryinformation_inner_text %}
+                    <span class="delivery-status-text">
+                        {{ 'detail.deliveryTimeRestock'|trans({
+                            '%count%': product.restockTime,
+                            '%restockTime%': product.restockTime,
+                            '%name%': product.deliveryTime.translation('name')
+                        })|sw_sanitize }}
+                    </span>
+                {% endblock %}
+            </p>
+        {% endblock %}
+    {% endblock %}
+{% endblock %}

@@ -1,0 +1,146 @@
+$sschreier-width-delivery-status-indicator: 18 !default;
+$sschreier-height-delivery-status-indicator: 18 !default;
+$sschreier-top-delivery-status-indicator: 4 !default;
+$sschreier-height-circle-delivery-status-indicator-icon: 28 !default;
+$sschreier-top-circle-delivery-status-indicator-icon: 3 !default;
+$sschreier-color-delivery-status-indicator-icon: #FFFFFF !default;
+$sschreier-width-delivery-status-indicator-icon: 16 !default;
+$sschreier-height-delivery-status-indicator-icon: 16 !default;
+$sschreier-top-delivery-status-indicator-icon: 0 !default;
+$sschreier-width-delivery-status-indicator-exclamation-icon: 20 !default;
+$sschreier-height-delivery-status-indicator-exclamation-icon: 20 !default;
+$sschreier-top-delivery-status-indicator-exclamation-icon: 2 !default;
+$sschreier-margin-top-delivery-status-indicator-exclamation-icon: -4 !default;
+$sschreier-color-delivery-not-available: #c20017 !default;
+$sschreier-color-delivery-preorder: #974200 !default;
+$sschreier-color-delivery-available: #007e4e !default;
+$sschreier-color-delivery-soldout: #c20017 !default;
+$sschreier-color-delivery-restock: #974200 !default;
+
+.delivery-status-icons {
+  display: inline-block;
+  margin-bottom: 6px;
+  margin-right: 5px;
+
+  .delivery-status-indicator-icon {
+    display: inline-block;
+    height: $sschreier-height-circle-delivery-status-indicator-icon * 1px;
+    border-radius: 50%;
+    padding: 6px;
+    position: relative;
+    top: $sschreier-top-circle-delivery-status-indicator-icon * 1px;
+
+    .icon {
+      color: $sschreier-color-delivery-status-indicator-icon;
+      width: $sschreier-width-delivery-status-indicator-icon * 1px;
+      height: $sschreier-height-delivery-status-indicator-icon * 1px;
+
+      > svg {
+        top: $sschreier-top-delivery-status-indicator-icon * 1px;
+      }
+    }
+
+    &.icon-exclamation {
+      padding: 6px 4px;
+
+      .icon {
+        width: $sschreier-width-delivery-status-indicator-exclamation-icon * 1px;
+        height: $sschreier-height-delivery-status-indicator-exclamation-icon * 1px;
+        margin-top: $sschreier-margin-top-delivery-status-indicator-exclamation-icon * 1px;
+
+        > svg {
+          top: $sschreier-top-delivery-status-indicator-exclamation-icon * 1px;
+        }
+      }
+    }
+  }
+}
+
+.delivery-information {
+  .delivery-status-indicator {
+    width: $sschreier-width-delivery-status-indicator * 1px;
+    height: $sschreier-height-delivery-status-indicator * 1px;
+    line-height: $sschreier-height-delivery-status-indicator * 1px;
+    top: $sschreier-top-delivery-status-indicator * 1px;
+  }
+
+  &.delivery-not-available {
+    &.delivery-colored {
+      color: $sschreier-color-delivery-not-available;
+    }
+
+    .delivery-status-icons {
+      .delivery-status-indicator-icon {
+        background-color: $sschreier-color-delivery-not-available;
+      }
+    }
+
+    .bg-danger {
+      background-color: $sschreier-color-delivery-not-available;
+    }
+  }
+
+  &.delivery-preorder {
+    &.delivery-colored {
+      color: $sschreier-color-delivery-preorder;
+    }
+
+    .delivery-status-icons {
+      .delivery-status-indicator-icon {
+        background-color: $sschreier-color-delivery-preorder;
+      }
+    }
+
+    .bg-warning {
+      background-color: $sschreier-color-delivery-preorder;
+    }
+  }
+
+  &.delivery-available {
+    &.delivery-colored {
+      color: $sschreier-color-delivery-available;
+    }
+
+    .delivery-status-icons {
+      .delivery-status-indicator-icon {
+        background-color: $sschreier-color-delivery-available;
+      }
+    }
+
+    .bg-success {
+      background-color: $sschreier-color-delivery-available;
+    }
+  }
+
+  &.delivery-soldout {
+    &.delivery-colored {
+      color: $sschreier-color-delivery-soldout;
+    }
+
+    .delivery-status-icons {
+      .delivery-status-indicator-icon {
+        background-color: $sschreier-color-delivery-soldout;
+      }
+    }
+
+    .bg-danger {
+      background-color: $sschreier-color-delivery-soldout;
+    }
+  }
+
+  &.delivery-restock {
+    &.delivery-colored {
+      color: $sschreier-color-delivery-restock;
+    }
+
+    .delivery-status-icons {
+      .delivery-status-indicator-icon {
+        background-color: $sschreier-color-delivery-restock;
+      }
+    }
+
+    .bg-warning {
+      background-color: $sschreier-color-delivery-restock;
+    }
+  }
+}
