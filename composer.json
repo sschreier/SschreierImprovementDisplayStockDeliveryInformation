@@ -1,7 +1,7 @@
 {
   "name": "sschreier/sschreierimprovementdisplaystockdeliveryinformation",
   "description": "improves the display of the stock and delivery information",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "shopware-platform-plugin",
   "license": "GPL-3.0-or-later",
   "authors": [
