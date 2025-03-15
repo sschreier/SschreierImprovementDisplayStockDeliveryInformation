@@ -76,7 +76,7 @@ After changing settings specifically for the appearance of the circles and the i
 3. Click on the button "Save"
 
 ## How to install the extension
-### via console (recommended)
+### via zip and console (recommended)
 1. Download the latest _SschreierImprovementDisplayStockDeliveryInformation-master.zip_.
 2. Unzip the zip file and rename the folder to _SschreierImprovementDisplayStockDeliveryInformation_.
 3. Move the folder to the project folder _custom/plugins/_ .
@@ -99,7 +99,15 @@ bin/console plugin:install --activate SschreierImprovementDisplayStockDeliveryIn
 ],
 ```
 
-2. Connect to the console via ssh and install the plugin source code via the command
+2. Connect to the console via ssh and install the plugin via the command
+```
+composer require sschreier/sschreierimprovementdisplaystockdeliveryinformation
+bin/console plugin:refresh
+bin/console plugin:install --activate SschreierImprovementDisplayStockDeliveryInformation
+```
+
+### via https://packagist.org
+- Connect to the console via ssh and install the plugin via the command
 ```
 composer require sschreier/sschreierimprovementdisplaystockdeliveryinformation
 bin/console plugin:refresh
